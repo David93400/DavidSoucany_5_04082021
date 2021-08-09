@@ -30,6 +30,8 @@
       href="https://fonts.googleapis.com/css2?family=Paprika&family=Roboto:wght@100;300;400;500;700;900&display=swap"
       rel="stylesheet"
     />
+     <link rel="shortcut icon" type="image/png" href="/Frontend/assets/img/favicon.png">
+
 
     <title>OriFurniture Produit</title>
   </head>
@@ -108,27 +110,18 @@
       >
         <div class="row" id="products">
           <div class="col-md-4">
-            <div class="card border-0 shadow-lg" style="width: 22rem">
-              <img
-                src="http://localhost:3000/images/oak_1.jpg"
-                class="card-img-top"
-              />
-              <div class="card-body bg-dark text-light">
-                <h5 class="card-title fs-3 my-3">Lorem, ipsum.</h5>
-                <p class="card-text">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Tenetur, alias.
-                </p>
-                <p class="card-price fw-bolder fs-2">45€</p>
+            <div  class="card border-0 shadow-lg" style="width: 22rem" >
+              <img  src="#" class="card-img-top" id="productimg"/>
+              <div class="card-body bg-dark text-light" >
+                <h5 class="card-title fs-3 my-3" id="productname" >Name</h5>
+                <p class="card-text" id="productdescription">Description</p>
+                <p class="card-price fw-bolder fs-2" id="productprice">45€</p>
                 <select
                   class="form-select mb-3"
                   aria-label="sélection du vernis"
+                  id="varnish"
                 >
                   <option selected>Sélectionnez votre vernis</option>
-                  <option id="v1" value="1">One</option>
-                  <option id="v2" value="2">Two</option>
-                  <option id="v3" value="3">Three</option>
-                  <option id="v4" value="4">Four</option>
                 </select>
                 <input
                   class="form-control mb-3"
@@ -156,9 +149,9 @@
     <!-- Section Footer -->
     <footer>
       <section class="footer">
-        <div class="container py-4 text-light">
+        <div class="container py-4 text-light ">
           <div class="row">
-            <div class="col text-center">
+            <div class="col text-center d-flex align-item-center justify-content-center">
               <a href="#" class="btn btn-lg border-bottom rounded-0 text-white"
                 >Contact</a
               >
@@ -174,8 +167,11 @@
     </footer>
 
     <!-- Script JS -->
+  
 
     <script src="/Frontend/assets/scripts/fonction.js"></script>
     <script src="../Frontend/assets/scripts/product.js"></script>
+
+
   </body>
 </html>
