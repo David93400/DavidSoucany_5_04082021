@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- CSS / Bootstrap / Icon / Police -->
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/Frontend/assets/css/bootstrap/bootstrap.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Paprika&family=Roboto:wght@100;300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>OriFurniture Panier</title>
+  </head>
+  <body>
+    <!-- Header -->
+
+    <header>
+      <nav class="bg-navbar bg-dark navbar navbar-expand-lg w-100">
+        <div class="container-fluid">
+          <a
+            class="navbar-brand fs-1 paprika text-light mx-5 py-3 fw-bolder"
+            href="index.html"
+            >OriFurniture</a
+          >
+          <a
+            class="
+              nav-link
+              active
+              btn btn-lg
+              border-bottom
+              rounded-0
+              mx-5
+              col-1
+              fs-5
+              text-white
+              d-flex
+              no-wrap
+              justify-content-center
+              align-item-center
+              text-center
+            "
+            aria-current="page"
+            href="index.html"
+            >Home</a
+          >
+          <a
+            class="
+              nav-link
+              active
+              btn btn-lg
+              border-bottom
+              rounded-0
+              mx-5
+              col-1
+              fs-5
+              text-white
+              d-flex
+              no-wrap
+              justify-content-center
+              align-item-center
+              text-center
+            "
+            aria-current="page"
+            href="index.html"
+            >Infos</a
+          >
+        </div>
+      </nav>
+    </header>
+
+    <!-- Panier Title -->
+
+    <section class="basket-title">
+      <div
+        class="
+          container-fluid
+          d-flex
+          justify-content-center
+          align-item-center
+          py-5
+          text-light
+        "
+      >
+        <div class="row">
+          <div class="col">
+            <h2 class="display-9 mt-2 paprika border-bottom border-top py-3">
+              Panier
+            </h2>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Formulaire Coodonnées / Panier -->
+
+    <div class="container-fluid">
+      <div class="row bg-dark text-light py-5 px-4">
+        <div class="col-md-5 col-lg-4 order-md-last">
+          <h4 class="d-flex justify-content-between align-items-center mb-3">
+            <span class="text-light">Votre Panier</span>
+            <span class="badge bg-light text-dark rounded-pill">3</span>
+          </h4>
+          <ul class="list-group mb-3">
+            <li class="list-group-item d-flex justify-content-between lh-sm">
+              <div>
+                <h6 class="my-0">Product name</h6>
+                <small class="text-muted">Brief description</small>
+              </div>
+              <span class="text-muted">$12</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between lh-sm">
+              <div>
+                <h6 class="my-0">Second product</h6>
+                <small class="text-muted">Brief description</small>
+              </div>
+              <span class="text-muted">$8</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between lh-sm">
+              <div>
+                <h6 class="my-0">Third item</h6>
+                <small class="text-muted">Brief description</small>
+              </div>
+              <span class="text-muted">$5</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between bg-light">
+              <div class="text-success">
+                <h6 class="my-0">Promo code</h6>
+                <small>EXAMPLECODE</small>
+              </div>
+              <span class="text-success">−$5</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between">
+              <span>Total (€)</span>
+              <strong>20€</strong>
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-7 col-lg-8">
+          <h4 class="mb-3">Adresse de Livraison</h4>
+          <form class="needs-validation" novalidate>
+            <div class="row g-3">
+              <div class="col-sm-6">
+                <label for="firstName" class="form-label">Prénom</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="firstName"
+                  placeholder=""
+                  value=""
+                  required
+                />
+                <div class="invalid-feedback">Votre prénom est requis.</div>
+              </div>
+
+              <div class="col-sm-6">
+                <label for="lastName" class="form-label">Nom</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="lastName"
+                  placeholder=""
+                  value=""
+                  required
+                />
+                <div class="invalid-feedback">Votre nom est requis.</div>
+              </div>
+
+              <div class="col-12">
+                <label for="email" class="form-label">Email </label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="email"
+                  placeholder="vous@exemple.com"
+                />
+                <div class="invalid-feedback">
+                  Merci de saisir une adresse mail valide.
+                </div>
+              </div>
+
+              <div class="col-12">
+                <label for="address" class="form-label">Adresse</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="address"
+                  placeholder="34 rue du Lac"
+                  required
+                />
+                <div class="invalid-feedback">
+                  Merci de saisir votre adresse.
+                </div>
+              </div>
+
+              <div class="col-12">
+                <label for="address2" class="form-label"
+                  >Complément d'adresse
+                  <span class="text-muted">(Optionnel)</span></label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="address2"
+                  placeholder="numéro de batiment / appartement"
+                />
+              </div>
+
+              <div class="col-md-5">
+                <label for="country" class="form-label">Pays</label>
+                <select class="form-select" id="country" required>
+                  <option value="">Choisissez ...</option>
+                  <option>France</option>
+                  <option>Belgique</option>
+                </select>
+                <div class="invalid-feedback">Veuillez choisir un pays.</div>
+              </div>
+
+              <div class="col-md-7">
+                <label for="zip" class="form-label">CP / Ville</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="cp"
+                  placeholder="93400 Saint-Ouen-sur-Seine"
+                  required
+                />
+                <div class="invalid-feedback">
+                  Veuillez renseigner votre ville.
+                </div>
+              </div>
+            </div>
+          </form>
+          <a href="confirmation.html"
+            ><button class="w-100 btn btn-light btn-lg mt-5">
+              Valider la commande
+            </button></a
+          >
+        </div>
+      </div>
+    </div>
+
+    <!-- Banner-bottom -->
+
+    <section class="basket-title_bottom">
+      <div
+        class="
+          container-fluid
+          d-flex
+          justify-content-center
+          align-item-center
+          py-5
+          text-light
+        "
+      ></div>
+    </section>
+
+    <!-- Footer -->
+
+    <footer>
+      <section class="footer">
+        <div class="container py-4 text-light w-100">
+          <div class="row">
+            <div class="col text-center">
+              <a href="#" class="btn btn-lg border-bottom rounded-0 text-white"
+                >Contact</a
+              >
+            </div>
+            <div class="col text-center">
+              <a href="#" class="btn btn-lg border-bottom rounded-0 text-white"
+                >Mentions légales</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+    </footer>
+
+    <!-- Script JS -->
+
+    <script src="/Frontend/assets/scripts/fonction.js"></script>
+    <script src="/Frontend/assets/scripts/basket.js"></script>
+  </body>
+</html>

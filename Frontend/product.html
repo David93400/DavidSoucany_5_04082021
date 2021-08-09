@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- CSS / Bootstrap / Icon / Police -->
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/Frontend/assets/css/bootstrap/bootstrap.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Paprika&family=Roboto:wght@100;300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>OriFurniture Produit</title>
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <header>
+      <nav class="bg-navbar navbar navbar-expand-lg position-fixed w-100">
+        <div class="container-fluid">
+          <a
+            class="navbar-brand fs-1 paprika text-light mx-5 py-3 fw-bolder"
+            href="index.html"
+            >OriFurniture</a
+          >
+          <a
+            class="
+              nav-link
+              active
+              btn btn-lg
+              border-bottom
+              rounded-0
+              mx-5
+              col-1
+              fs-5
+              text-white
+              w-25
+            "
+            aria-current="page"
+            href="index.html"
+            >Home</a
+          >
+          <a
+            href="basket.html"
+            class="
+              btn btn-lg
+              border-bottom
+              rounded-0
+              mx-5
+              col-1
+              fs-5
+              text-white
+              d-flex
+              no-wrap
+              justify-content-center
+              align-item-center
+              w-25
+            "
+          >
+            <i class="bi-cart-fill me-4 fs-4 text-white"></i>Panier
+          </a>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Section Banner -->
+
+    <section
+      class="
+        banner-product
+        pt-5
+        d-flex
+        justify-content-center
+        align-item-center
+      "
+    >
+      <div class="container my-5 py-5">
+        <div class="row px-3 pt-5">
+          <div class="col-md-6"></div>
+        </div>
+      </div>
+    </section>
+    <!-- Section Produits -->
+
+    <section class="products roboto">
+      <div
+        class="container p-5 d-flex justify-content-center align-item-center"
+      >
+        <div class="row" id="products">
+          <div class="col-md-4">
+            <div class="card border-0 shadow-lg" style="width: 22rem">
+              <img
+                src="http://localhost:3000/images/oak_1.jpg"
+                class="card-img-top"
+              />
+              <div class="card-body bg-dark text-light">
+                <h5 class="card-title fs-3 my-3">Lorem, ipsum.</h5>
+                <p class="card-text">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Tenetur, alias.
+                </p>
+                <p class="card-price fw-bolder fs-2">45€</p>
+                <select
+                  class="form-select mb-3"
+                  aria-label="sélection du vernis"
+                >
+                  <option selected>Sélectionnez votre vernis</option>
+                  <option id="v1" value="1">One</option>
+                  <option id="v2" value="2">Two</option>
+                  <option id="v3" value="3">Three</option>
+                  <option id="v4" value="4">Four</option>
+                </select>
+                <input
+                  class="form-control mb-3"
+                  type="number"
+                  id="tentacles"
+                  name="tentacles"
+                  min="1"
+                  max="100"
+                  value="1"
+                />
+                <button
+                  id="addCard"
+                  type="button"
+                  class="btn btn-light w-100 mb-3"
+                >
+                  Ajouter au panier
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section Footer -->
+    <footer>
+      <section class="footer">
+        <div class="container py-4 text-light">
+          <div class="row">
+            <div class="col text-center">
+              <a href="#" class="btn btn-lg border-bottom rounded-0 text-white"
+                >Contact</a
+              >
+            </div>
+            <div class="col text-center">
+              <a href="#" class="btn btn-lg border-bottom rounded-0 text-white"
+                >Mentions légales</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+    </footer>
+
+    <!-- Script JS -->
+
+    <script src="/Frontend/assets/scripts/fonction.js"></script>
+    <script src="../Frontend/assets/scripts/product.js"></script>
+  </body>
+</html>
