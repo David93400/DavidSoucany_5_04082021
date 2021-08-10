@@ -12,6 +12,7 @@ const quantity = document.getElementById('quantity');
 const addBtn = document.querySelector('#addCard');
 
 let textConfirm = null;
+const product = null;
 
 
 // Modification de l'url de l'API
@@ -26,6 +27,10 @@ fetch(NEWURL)
     .then((data) => {
         const product = data;
         addCard(product);
+
+        // Affichage du nom de la page en fonction du produit sélectionné
+
+        document.title = " Orifurniture  - " + product.name
 
         // Fonction pour completer les infos produits
 
@@ -42,73 +47,85 @@ fetch(NEWURL)
     })
     .catch((erreur) => console.log('Erreur : ' + erreur));
 
+    // Besoin d'un panier dans le localStorage.
+    // Vérifie si il existe, sinon le créer (peu importe la page produit).
 
 
-    
+if(localStorage.getItem("userBasket")){
 
-    addBtn.addEventListener('click', addProduct)
+	console.log("Administration : le panier de l'utilisateur existe dans le localStorage");
 
-    function addProduct() {
+}else{
 
-        let productAdded = {
-            name: cardName.innerHTML,
-            varnish: varnish.value,
-            price: parseFloat(cardPrice.innerHTML),
-            quantity: parseFloat(quantity.value),
-        };
+	console.log("Administration : Le panier n'existe pas, il va être créer et l'envoyer dans le localStorage");
 
-        // Si aucun vernis n'est sélectionné, affichage d'un message d'erreur.
+  	//Le panier est un tableau de produits
 
-        if(varnish.value == 'Sélectionnez votre vernis'){
+  	let initBasket = [];
+
+  	localStorage.setItem("userBasket", JSON.stringify(initBasket));
+
+  };
+
+  //Tableau et objet demandé par l'API pour la commande
+
+  	// let contact;
+  	// let products = [];
+
+	//L'user a maintenant un panier
+
+	let userBasket = JSON.parse(localStorage.getItem("userBasket"));
+
+
+// Ajouter au panier
+
+addBtn.addEventListener('click' ,function() {
+
+    let productAdded = {
+        name: cardName.innerHTML,
+        price: parseFloat(cardPrice.innerHTML),
+        quantity: parseFloat(quantity.value),
+        varnish: varnish.value,
+        _id: id,
+    };
+
+
+
+
+    if ((varnish.value !== 'Sélectionnez votre vernis')) {
+
+    // Si le localStorage existe, on le récupère, on ajoute le userBasket, 
+    // puis on le renvoie avec la modification
+
+            if(localStorage.getItem("userBasket") !== null) {
+
+                initBasket = JSON.parse(localStorage.getItem("userBasket"));
+                
+            } 
+
+        initBasket.push(productAdded);
+        localStorage.setItem("userBasket", JSON.stringify(initBasket));
+        
             
-            textConfirm = document.querySelector('#text-confirmation');
-            textConfirm.innerHTML = 'Veuillez choisir votre vernis';
-            textConfirm.classList.remove('d-none');
-            textConfirm.classList.add('btn-danger');
-            varnish.classList.remove('btn-light');
-            varnish.classList.add('btn-danger');
+        let = textConfirm = document.querySelector('#text-confirmation');
+        textConfirm.innerHTML = 'Produit(s) bien ajouté(s) au panier !';
+        textConfirm.classList.remove('d-none');
+        textConfirm.classList.add('btn-success');
+        quantity.value = 1;
 
-            setTimeout(clearBtnDanger, 2500);
+        setTimeout(clearBtnSuccess, 2500);
 
-        }
+    } else {
 
-        let tabProducts = [];
+        let = textConfirm = document.querySelector('#text-confirmation');
+        textConfirm.innerHTML = 'Veuillez choisir votre vernis';
+        textConfirm.classList.remove('d-none');
+        textConfirm.classList.add('btn-danger');
+        varnish.classList.remove('btn-light');
+        varnish.classList.add('btn-danger');
 
-        // si LocalStorage existe, on récupere son contenu pour le mettre dans le array
-        // ensuite on le renvoie avec le/les nouveau(x) produit(s).
-
-        if(localStorage.getItem("products" !== null)) {
-
-            tabProducts = JSON.parse(localStorage.getItem("products"));
-        }
-
-        // Si le LocalStorage est vide, on le creer avec le/les produits ajouté(s)
-
-        tabProducts.push(productAdded);
-        localStorage.setItem("products", JSON.stringify(tabProducts));
-
-        // Confirmation d'ajout visuel
-
-
-        if(varnish.value !== 'Sélectionnez votre vernis' && quantity.value == 1) {
-
-            textConfirm = document.querySelector('#text-confirmation');
-            textConfirm.innerHTML = 'Votre Produit a bien été ajouté au panier';
-            textConfirm.classList.remove('d-none');
-            textConfirm.classList.add('btn-success');
-
-            setTimeout(clearBtnSuccess, 2500);
-
-        } else if ((varnish.value !== 'Sélectionnez votre vernis' && quantity.value > 1)) {
-
-            textConfirm = document.querySelector('#text-confirmation');
-            textConfirm.innerHTML = 'Vos Produits ont bien été ajoutés au panier';
-            textConfirm.classList.remove('d-none');
-            textConfirm.classList.add('btn-success');
-            quantity.value = 1;
-
-            setTimeout(clearBtnSuccess, 2500);
-        }
+        setTimeout(clearBtnDanger, 2500);
     }
-    
+})
+
     
