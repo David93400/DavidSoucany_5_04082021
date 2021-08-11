@@ -14,6 +14,7 @@ const addBtn = document.querySelector('#addCard');
 let textConfirm = null;
 const product = null;
 
+totalBasket();
 
 // Modification de l'url de l'API
 

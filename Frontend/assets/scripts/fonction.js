@@ -1,6 +1,11 @@
 const url = `http://localhost:3000/api/furniture`;
+
+let copyLs = JSON.parse(localStorage.getItem('userBasket'));
 let totalPrice = document.querySelector('#totalPrice');
 let count = document.querySelector('#count');
+
+let totalPay;
+let totalCount;
 
 // Convertisseur de prix
 
@@ -42,12 +47,12 @@ textConfirm.classList.remove('btn-success');
 }
 
 
-// Total panier et total Articles sur les pages concernées
+// Total panier et total Articles 
 
 function totalBasket() {
 
-  let totalPay = 0;
-  let totalCount = 0;
+  totalPay = 0;
+  totalCount = 0;
 
   JSON.parse(localStorage.getItem('userBasket')).forEach(element => {
 
@@ -58,6 +63,18 @@ function totalBasket() {
 
   totalPrice.innerHTML = `${totalPay} €`;
   count.innerHTML = totalCount;
-  
+  console.log(totalCount);
 }
 
+// Reset du panier et reload de la page
+
+function clearBasket() {
+
+    const btnClear = document.querySelector('#btnClear');
+
+    btnClear.addEventListener('click', () => {
+
+        localStorage.clear();
+        document.location.reload();
+    });
+}

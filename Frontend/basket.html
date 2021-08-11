@@ -138,7 +138,7 @@
         <div class="col-md-5 col-lg-4 order-md-last">
           <h4 class="d-flex justify-content-between align-items-center mb-3">
             <span class="text-light">Votre Panier</span>
-            <button class="btn btn-warning btn roboto">Vider le panier</button>
+            <button id="btnClear" class="btn text-light btn roboto border border-warning border-3">Vider le panier</button>
             <span id="count" class="badge bg-warning text-dark rounded-pill"></span>
           </h4>
           <ul id="basketList" class="list-group mb-3">
@@ -167,7 +167,7 @@
                   value=""
                   required
                 />
-                <div class="invalid-feedback">Votre prénom est requis.</div>
+                <div class="invalid-feedback text-danger color-danger mt-2">Votre prénom est requis.</div>
               </div>
 
               <div class="col-sm-6">
@@ -238,7 +238,7 @@
                 <input
                   type="text"
                   class="form-control"
-                  id="cp"
+                  id="city"
                   placeholder="93400 Saint-Ouen-sur-Seine"
                   required
                 />
@@ -248,11 +248,7 @@
               </div>
             </div>
           </form>
-          <a href="confirmation.html"
-            ><button class="w-100 btn btn-light btn-lg mt-5">
-              Valider la commande
-            </button></a
-          >
+          <a href="#"><button id="submit" class="w-100 btn btn-dark btn-lg mt-5 border border-warning border-3" type="submit">Valider la commande</button></a>
         </div>
       </div>
     </div>

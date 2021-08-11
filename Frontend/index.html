@@ -64,6 +64,7 @@
           >
             <i class="bi-cart-fill me-4 fs-4 text-white"></i>Panier
             <p id="count" class="badge bg-warning text-dark rounded-pill ms-4"></p>
+            <span id="totalPrice" class="mx-4"></span>
           </a>
         </div>
       </nav>
@@ -75,7 +76,31 @@
       >
         <div class="container my-5 py-5s">
           <div class="row px-3 pt-5">
-            <div class="col-md-6"></div>
+            <div class="col-md-6">
+
+              <!-- carousel start -->
+
+              <div id="carousel" class="carousel slide carousel-fade m-5" data-bs-ride="carousel" data-bs-interval="2500">
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="https://images.pexels.com/photos/1866149/pexels-photo-1866149.jpeg?cs=srgb&dl=pexels-martin-p%C3%A9chy-1866149.jpg&fm=jpg" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="https://images.pexels.com/photos/1350789/pexels-photo-1350789.jpeg?cs=srgb&dl=pexels-eric-montanah-1350789.jpg&fm=jpg" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="https://images.pexels.com/photos/276534/pexels-photo-276534.jpeg?cs=srgb&dl=pexels-pixabay-276534.jpg&fm=jpg" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="https://images.pexels.com/photos/923192/pexels-photo-923192.jpeg?cs=srgb&dl=pexels-steve-johnson-923192.jpg&fm=jpg" class="d-block w-100" alt="...">
+                  </div>
+                </div>
+              </div>
+
+
+            <!-- carousel End -->
+
+            </div>
             <div class="col-md-6">
               <h1
                 class="
@@ -88,7 +113,7 @@
                   align-item-center
                   pt-5
                   mt-5
-                "
+                  ms-5"
               >
                 Les meubles sur mesure
               </h1>
@@ -156,6 +181,7 @@
 
     <!-- Script JS -->
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
     <script src="/Frontend/assets/scripts/fonction.js"></script>
     <script src="../Frontend/assets/scripts/index.js"></script>
   </body>

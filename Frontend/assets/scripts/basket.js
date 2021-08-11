@@ -1,10 +1,10 @@
-let copyLs = JSON.parse(localStorage.getItem('userBasket'));
 
 let basketInfo = document.querySelector('#basketInfo');
 let basket = document.querySelector('#basket');
 let basketList = document.querySelector('#basketList');
 
 totalBasket();
+clearBasket();
 
 // Si le panier contient quelque chose on affiche le formulaire 
 // et on masque le message du panier vide.
@@ -29,6 +29,9 @@ for (produit in copyLs) {
               <span id="price" class="text-muted">${productPrice} €</span>
             </li>`;
 }
+
+
+
 
 
 

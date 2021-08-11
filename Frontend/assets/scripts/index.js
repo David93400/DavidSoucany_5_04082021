@@ -1,5 +1,4 @@
 
-
 // Fetch de l'url API
 
 fetch(url)
@@ -26,17 +25,19 @@ function addProducts(data) {
 
     const card = document.querySelector(`#list`);
     card.innerHTML += `<div class="col-sm-6 col-md-4 d-flex justify-content-center">
-            <div class="card border-0 shadow-lg my-5" style="width: 20rem">
+            <div class="card border-0 shadow-lg my-5 mx-4" style="width: 20rem">
               <img src="${produit.imageUrl}" class="card-img-top"/>
               <div class="card-body bg-dark text-light">
-                <h5 class="card-title fs-3 my-3 paprika">${produit.name}</h5>
+                <h5 class="card-title fs-3 my-4 paprika">${produit.name}</h5>
                 <p class="card-text">${produit.description}</p>
-                <p class="card-price fw-bolder fs-2">${price}</p>
+                <p class="card-price fw-bold fs-2">${price}</p>
                 <a href="product.html?_id=${produit._id}" class="btn btn-light">En savoir plus</a>
               </div>
             </div>
           </div>`;
   }
 }
+
+totalBasket();
 
 
