@@ -41,7 +41,7 @@
       <nav class="bg-navbar bg-dark navbar navbar-expand-lg w-100">
         <div class="container-fluid">
           <a
-            class="navbar-brand fs-1 paprika text-light mx-5 py-3 fw-bolder"
+            class="navbar-brand fs-1 paprika text-light mx-5 py-3 fw-bolder col-3"
             href="index.html"
             >OriFurniture</a
           >
@@ -53,7 +53,7 @@
               border-bottom
               rounded-0
               mx-5
-              col-1
+              col-3
               fs-5
               text-white
               d-flex
@@ -74,7 +74,7 @@
               border-bottom
               rounded-0
               mx-5
-              col-1
+              col-3
               fs-5
               text-white
               d-flex
@@ -106,48 +106,50 @@
       >
         <div class="row">
           <div class="col">
-            <h2 class="display-9 mt-2 paprika border-bottom border-top py-3">
+            <h2 class="display-9 mt-2 paprika border-bottom border-top py-3 text-center">
               Panier
-            </h2>
-          </div>
+            </h2>           
+          </div>         
         </div>
       </div>
+      
+    <div id="basketInfo"
+        class="
+          container-fluid
+          d-flex
+          justify-content-center
+          align-item-center
+          py-5
+          text-light
+        "
+    >
+        <div class="row mb-5 basket-info">
+          <div class="col">
+            <p class="fs-3 mb-5">Votre panier est actuellement vide</p>
+          </div>
+        </div>
+    </div>
     </section>
 
     <!-- Formulaire Coodonnées / Panier -->
 
     <div class="container-fluid">
-      <div class="row bg-dark text-light py-5 px-4">
+      <div id="basket" class="row bg-dark text-light py-5 px-4 d-none">
         <div class="col-md-5 col-lg-4 order-md-last">
           <h4 class="d-flex justify-content-between align-items-center mb-3">
             <span class="text-light">Votre Panier</span>
-            <span class="badge bg-light text-dark rounded-pill">3</span>
+            <button class="btn btn-warning btn roboto">Vider le panier</button>
+            <span id="count" class="badge bg-warning text-dark rounded-pill"></span>
           </h4>
+          <ul id="basketList" class="list-group mb-3">
+
+            <!-- insertion dynamique du panier -->
+            
+          </ul>
           <ul class="list-group mb-3">
-            <li class="list-group-item d-flex justify-content-between lh-sm">
-              <div>
-                <h6 class="my-0">Product name</h6>
-                <small class="text-muted">Brief description</small>
-              </div>
-              <span class="text-muted">$12</span>
-            </li>
-            <li class="list-group-item d-flex justify-content-between lh-sm">
-              <div>
-                <h6 class="my-0">Second product</h6>
-                <small class="text-muted">Brief description</small>
-              </div>
-              <span class="text-muted">$8</span>
-            </li>
-            <li class="list-group-item d-flex justify-content-between lh-sm">
-              <div>
-                <h6 class="my-0">Third item</h6>
-                <small class="text-muted">Brief description</small>
-              </div>
-              <span class="text-muted">$5</span>
-            </li>
-            <li class="list-group-item d-flex justify-content-between">
-              <span>Total (€)</span>
-              <strong>20€</strong>
+            <li  class="list-group-item d-flex justify-content-between">
+              <span>Total (EUR)</span>
+              <strong id="totalPrice"></strong>
             </li>
           </ul>
         </div>

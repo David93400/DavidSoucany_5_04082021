@@ -1,6 +1,6 @@
 const url = `http://localhost:3000/api/furniture`;
-
-
+let totalPrice = document.querySelector('#totalPrice');
+let count = document.querySelector('#count');
 
 // Convertisseur de prix
 
@@ -9,7 +9,6 @@ function convertPrice(productPrice) {
   price = Intl.NumberFormat('fr-FR', {
     style: 'currency',
     currency: 'EUR',
-    minimumFractionDigits: 2,
   }).format(price / 100);
   return price;
 }
@@ -24,20 +23,7 @@ const varnishChoice = document.getElementById('varnish');
     return varnish.value;
 };
 
-
-// constructeur class produit
-
-class Product {
-  constructor(id, name, description, price, option, quantity, imgurl) {
-    this.id = id;
-    this.name = name;
-    this.description = description;
-    this.price = +price;
-    this.option = option;
-    this.quantity = +quantity;
-    this.imgurl = imgurl;
-  }
-}
+// Suppression de l'alerte Vernis
 
 function clearBtnDanger(){
 
@@ -47,6 +33,8 @@ varnish.classList.add('btn-light');
 varnish.classList.remove('btn-danger');
 }
 
+// Suppression de l'alerte d'ajout produit
+
 function clearBtnSuccess(){
 
 textConfirm.classList.add('d-none');
@@ -54,5 +42,22 @@ textConfirm.classList.remove('btn-success');
 }
 
 
+// Total panier et total Articles sur les pages concernées
 
- 
+function totalBasket() {
+
+  let totalPay = 0;
+  let totalCount = 0;
+
+  JSON.parse(localStorage.getItem('userBasket')).forEach(element => {
+
+      totalPay += (element.price * element.quantity);
+      totalCount += element.quantity;
+
+  });
+
+  totalPrice.innerHTML = `${totalPay} €`;
+  count.innerHTML = totalCount;
+  
+}
+

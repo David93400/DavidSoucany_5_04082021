@@ -1,3 +1,5 @@
+
+
 // Fetch de l'url API
 
 fetch(url)
@@ -36,3 +38,5 @@ function addProducts(data) {
           </div>`;
   }
 }
+
+

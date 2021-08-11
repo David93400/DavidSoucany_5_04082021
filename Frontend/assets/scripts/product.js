@@ -41,45 +41,17 @@ fetch(NEWURL)
             cardDescription.innerHTML = product.description;
             cardPrice.innerHTML = convertPrice(product.price);
 
-        
-        varnishOption(product);
+            varnishOption(product);
+
         }
     })
     .catch((erreur) => console.log('Erreur : ' + erreur));
 
-    // Besoin d'un panier dans le localStorage.
-    // Vérifie si il existe, sinon le créer (peu importe la page produit).
-
-
-if(localStorage.getItem("userBasket")){
-
-	console.log("Administration : le panier de l'utilisateur existe dans le localStorage");
-
-}else{
-
-	console.log("Administration : Le panier n'existe pas, il va être créer et l'envoyer dans le localStorage");
-
-  	//Le panier est un tableau de produits
-
-  	let initBasket = [];
-
-  	localStorage.setItem("userBasket", JSON.stringify(initBasket));
-
-  };
-
-  //Tableau et objet demandé par l'API pour la commande
-
-  	// let contact;
-  	// let products = [];
-
-	//L'user a maintenant un panier
-
-	let userBasket = JSON.parse(localStorage.getItem("userBasket"));
-
-
 // Ajouter au panier
 
 addBtn.addEventListener('click' ,function() {
+
+    // Creer un nouveau produit
 
     let productAdded = {
         name: cardName.innerHTML,
@@ -89,10 +61,9 @@ addBtn.addEventListener('click' ,function() {
         _id: id,
     };
 
-
-
-
     if ((varnish.value !== 'Sélectionnez votre vernis')) {
+
+        let initBasket = [];
 
     // Si le localStorage existe, on le récupère, on ajoute le userBasket, 
     // puis on le renvoie avec la modification
@@ -105,7 +76,8 @@ addBtn.addEventListener('click' ,function() {
 
         initBasket.push(productAdded);
         localStorage.setItem("userBasket", JSON.stringify(initBasket));
-        
+
+        // Message de confirmation d'ajout
             
         let = textConfirm = document.querySelector('#text-confirmation');
         textConfirm.innerHTML = 'Produit(s) bien ajouté(s) au panier !';
@@ -117,6 +89,8 @@ addBtn.addEventListener('click' ,function() {
 
     } else {
 
+        // Message d'erreur indiquant de choisir une option de vernis.
+
         let = textConfirm = document.querySelector('#text-confirmation');
         textConfirm.innerHTML = 'Veuillez choisir votre vernis';
         textConfirm.classList.remove('d-none');
@@ -127,5 +101,7 @@ addBtn.addEventListener('click' ,function() {
         setTimeout(clearBtnDanger, 2500);
     }
 })
+
+
 
     
