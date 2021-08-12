@@ -16,6 +16,7 @@ function convertPrice(productPrice) {
     currency: 'EUR',
   }).format(price / 100);
   return price;
+  
 }
 
 // Fonction pour le choix des vernis
@@ -46,6 +47,14 @@ textConfirm.classList.add('d-none');
 textConfirm.classList.remove('btn-success');
 }
 
+// Fonction reload
+
+function reload() {
+
+  document.location.reload();
+
+}
+
 
 // Total panier et total Articles 
 
@@ -63,7 +72,7 @@ function totalBasket() {
 
   totalPrice.innerHTML = `${totalPay} €`;
   count.innerHTML = totalCount;
-  console.log(totalCount);
+
 }
 
 // Reset du panier et reload de la page

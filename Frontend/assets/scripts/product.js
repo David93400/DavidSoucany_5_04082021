@@ -14,8 +14,6 @@ const addBtn = document.querySelector('#addCard');
 let textConfirm = null;
 const product = null;
 
-totalBasket();
-
 // Modification de l'url de l'API
 
 const NEWURL = `http://localhost:3000/api/furniture/${id}`;
@@ -40,31 +38,36 @@ fetch(NEWURL)
             cardImg.src = product.imageUrl;
             cardName.innerHTML = product.name;
             cardDescription.innerHTML = product.description;
-            cardPrice.innerHTML = convertPrice(product.price);
+            cardPrice.innerHTML = ((product.price) / 100) + " €";
 
             varnishOption(product);
-
+               
         }
     })
     .catch((erreur) => console.log('Erreur : ' + erreur));
+
+
 
 // Ajouter au panier
 
 addBtn.addEventListener('click' ,function() {
 
     // Creer un nouveau produit
-
+    
     let productAdded = {
         name: cardName.innerHTML,
-        price: parseFloat(cardPrice.innerHTML),
+        price: parseFloat(cardPrice.innerText.split(" ").join("")),
         quantity: parseFloat(quantity.value),
         varnish: varnish.value,
         _id: id,
     };
 
+
     if ((varnish.value !== 'Sélectionnez votre vernis')) {
 
         let initBasket = [];
+
+
 
     // Si le localStorage existe, on le récupère, on ajoute le userBasket, 
     // puis on le renvoie avec la modification
@@ -78,6 +81,7 @@ addBtn.addEventListener('click' ,function() {
         initBasket.push(productAdded);
         localStorage.setItem("userBasket", JSON.stringify(initBasket));
 
+
         // Message de confirmation d'ajout
             
         let = textConfirm = document.querySelector('#text-confirmation');
@@ -87,6 +91,7 @@ addBtn.addEventListener('click' ,function() {
         quantity.value = 1;
 
         setTimeout(clearBtnSuccess, 2500);
+        setTimeout(reload, 2550);
 
     } else {
 
@@ -103,6 +108,12 @@ addBtn.addEventListener('click' ,function() {
     }
 })
 
+// Si le panier contient quelque chose on affiche le nombre d'article et le total €
 
+if (localStorage.getItem('userBasket') !== null) {
+
+    totalBasket();
+    
+}
 
     

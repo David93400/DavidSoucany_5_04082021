@@ -167,7 +167,7 @@
                   value=""
                   required
                 />
-                <div class="invalid-feedback text-danger color-danger mt-2">Votre prénom est requis.</div>
+                <div id="prenom" class="invalid-feedback text-danger mt-2">Votre prénom est requis.</div>
               </div>
 
               <div class="col-sm-6">
@@ -180,7 +180,7 @@
                   value=""
                   required
                 />
-                <div class="invalid-feedback">Votre nom est requis.</div>
+                <div id="nom" class="invalid-feedback text-danger mt-2">Votre nom est requis.</div>
               </div>
 
               <div class="col-12">
@@ -191,7 +191,7 @@
                   id="email"
                   placeholder="vous@exemple.com"
                 />
-                <div class="invalid-feedback">
+                <div id="mail" class="invalid-feedback text-danger mt-2">
                   Merci de saisir une adresse mail valide.
                 </div>
               </div>
@@ -205,7 +205,7 @@
                   placeholder="34 rue du Lac"
                   required
                 />
-                <div class="invalid-feedback">
+                <div id="adresse" class="invalid-feedback text-danger mt-2">
                   Merci de saisir votre adresse.
                 </div>
               </div>
@@ -224,14 +224,12 @@
               </div>
 
               <div class="col-md-5">
-                <label for="country" class="form-label">Pays</label>
-                <select class="form-select" id="country" required>
-                  <option value="">Choisissez ...</option>
-                  <option>France</option>
-                  <option>Belgique</option>
-                </select>
-                <div class="invalid-feedback">Veuillez choisir un pays.</div>
+                <fieldset disabled>
+                <label for="disabledTextInput" class="form-label">Pays</label>
+                <input type="text" id="disabledTextInput" class="form-control" placeholder="FRANCE">
+                <div id="pays" class="invalid-feedback text-danger mt-2">Veuillez choisir un pays.</div>
               </div>
+              </fieldset>
 
               <div class="col-md-7">
                 <label for="zip" class="form-label">CP / Ville</label>
@@ -242,7 +240,7 @@
                   placeholder="93400 Saint-Ouen-sur-Seine"
                   required
                 />
-                <div class="invalid-feedback">
+                <div id="ville" class="invalid-feedback text-danger mt-2">
                   Veuillez renseigner votre ville.
                 </div>
               </div>

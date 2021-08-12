@@ -38,6 +38,13 @@ function addProducts(data) {
   }
 }
 
-totalBasket();
+
+// Si le panier contient quelque chose on affiche le nombre d'article et le total €
+
+if (localStorage.getItem('userBasket') !== null) {
+
+  totalBasket();
+
+}
 
 
