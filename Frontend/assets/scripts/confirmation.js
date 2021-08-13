@@ -12,5 +12,5 @@ orderNumber.innerText = order.orderId;
 orderTotal.innerText = total;
 orderName.innerText = order.contact.firstName;
 orderEmail.innerText = order.contact.email;
-// localStorage.clear();
+localStorage.clear();
 

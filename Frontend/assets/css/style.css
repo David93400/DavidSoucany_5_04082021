@@ -4,6 +4,9 @@
 .roboto {
   font-family: 'Roboto', sans-serif;
 }
+.bi{
+  cursor: pointer;
+}
 .bg-navbar {
   background-color: rgba(0, 0, 0, 0.557);
   z-index: 99;
@@ -24,10 +27,9 @@
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url('../img/banner-product.jpg') center center no-repeat;
       background-size: cover;
-  /* height: 270px; */
 }
 .basket-title_bottom{
-  height: 170px;
+  height: 365px;
 }
 .title,
 footer {

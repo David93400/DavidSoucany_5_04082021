@@ -17,19 +17,29 @@ if(localStorage.getItem('userBasket') !== null) {
 }
 
 for (produit in copyLs) {
+  let productPrice = copyLs[produit].price * copyLs[produit].quantity;
 
-    let productPrice = copyLs[produit].price * copyLs[produit].quantity;
-
-    basketList.innerHTML += `
+  basketList.innerHTML += `
 
         <li class="list-group-item d-flex justify-content-between lh-sm">
               <div>
                 <h6 class="my-0"><strong>${copyLs[produit].name}</strong> x ${copyLs[produit].quantity}</h6>
                 <small class="text-muted">Finition : ${copyLs[produit].varnish}</small>
+                <p class="mt-3 fs-5"><i class="bi bi-trash"></i><i id="${copyLs[produit]._id}" class="add bi bi-plus-circle ms-3"></i></p>
               </div>
               <span id="price" class="text-muted">${productPrice} €</span>
             </li>`;
+            
 }
+
+
+
+
+
+  
+
+
+
 
 // Récupération des inputs depuis le DOM
 

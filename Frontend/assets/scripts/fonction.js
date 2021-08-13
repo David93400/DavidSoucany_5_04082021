@@ -87,3 +87,17 @@ function clearBasket() {
         document.location.reload();
     });
 }
+
+
+
+
+function addItem() {
+
+  const btnAdd = document.getElementById(`${copyLs[produit]._id}`);
+
+  btnAdd.addEventListener('click', () => {
+  
+  copyLs[produit].quantity++;
+
+  });
+};
