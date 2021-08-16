@@ -115,6 +115,7 @@ addBtn.addEventListener('click', function () {
     totalBasket();
 
     setTimeout(clearBtnSuccess, 2500);
+    
   } else {
 
     // Message d'erreur indiquant de choisir une option de vernis.

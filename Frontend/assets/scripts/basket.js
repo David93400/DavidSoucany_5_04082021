@@ -61,9 +61,6 @@ const regexCity = /^(([a-zA-ZÀ-ÿ]+[\s\-]{1}[a-zA-ZÀ-ÿ]+)|([a-zA-ZÀ-ÿ]+)){1
 const regexMail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]{2,}\.[a-z]{2,4}$/;
 const regexAddress = /^(([a-zA-ZÀ-ÿ0-9]+[\s\-]{1}[a-zA-ZÀ-ÿ0-9]+)){1,10}$/;
 
-console.log(inputfirstName);
-console.log(inputlastName);
-
 submit.addEventListener('click', function (e) {
 
   // Gestion des messages d'erreur pour chaques champs non complétés
@@ -100,7 +97,7 @@ submit.addEventListener('click', function (e) {
     }, 2000);
   } else {
 
-    // Préparation des infos pour la requête POST
+    // Préparation des infos pour la requête POST 
 
     let products = [];
     for (listId of copyLs) {
