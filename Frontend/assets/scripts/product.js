@@ -50,6 +50,7 @@ fetch(NEWURL)
 // Ajouter au panier
 
 addBtn.addEventListener('click', function () {
+  
   // Creer un nouveau produit
 
   let productAdded = {
@@ -61,20 +62,44 @@ addBtn.addEventListener('click', function () {
   };
 
   if (varnish.value !== 'Sélectionnez votre vernis') {
-      
-    let initBasket = [];
 
-    // Si le localStorage existe, on le récupère, on ajoute le userBasket,
-    // puis on le renvoie avec la modification
+    //   Vérifie la présence du produit, si oui passe en TRUE et sauvegarde sa place
 
-    if (localStorage.getItem('userBasket') !== null) {
-      initBasket = JSON.parse(localStorage.getItem('userBasket'));
+    let isAlreadyPresent = false;
+    let indexModification;
+
+    for (items of userBasket) {
+
+        switch (items.varnish) {
+
+          case productAdded.varnish:
+
+          isAlreadyPresent = true;
+          indexModification = userBasket.indexOf(items);
+
+        }
     }
 
-    initBasket.push(productAdded);
-    localStorage.setItem('userBasket', JSON.stringify(initBasket));
+    // Si déja présent incrémente la quantité
 
-    // Message de confirmation d'ajout
+    if(isAlreadyPresent) {
+
+        userBasket[indexModification].quantity =
+             +userBasket[indexModification].quantity + +productAdded.quantity;
+
+        localStorage.setItem('userBasket', JSON.stringify(userBasket));
+
+
+        // Sinon ajoute le produit au localStorage
+
+    } else {
+
+        userBasket.push(productAdded);
+        localStorage.setItem('userBasket', JSON.stringify(userBasket));
+
+    }
+
+    // Message de confirmation d'ajout + pop modal 
 
     let = textConfirm = document.querySelector('#text-confirmation');
     textConfirm.innerHTML = 'Produit(s) bien ajouté(s) au panier !';
@@ -82,13 +107,16 @@ addBtn.addEventListener('click', function () {
     textConfirm.classList.add('btn-success');
     quantity.value = 1;
     clickBtn();
+
     function clickBtn() {
       document.querySelector('#btnmodal').click();
     }
+    
     totalBasket();
 
     setTimeout(clearBtnSuccess, 2500);
   } else {
+
     // Message d'erreur indiquant de choisir une option de vernis.
 
     let = textConfirm = document.querySelector('#text-confirmation');

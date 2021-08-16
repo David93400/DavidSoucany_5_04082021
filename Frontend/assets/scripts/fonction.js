@@ -1,5 +1,6 @@
 const url = `http://localhost:3000/api/furniture`;
 
+const userBasket = JSON.parse(localStorage.getItem('userBasket')) || [];
 let copyLs = JSON.parse(localStorage.getItem('userBasket'));
 let totalPrice = document.querySelector('#totalPrice');
 let count = document.querySelector('#count');

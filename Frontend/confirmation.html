@@ -30,155 +30,171 @@
       href="https://fonts.googleapis.com/css2?family=Paprika&family=Roboto:wght@100;300;400;500;700;900&display=swap"
       rel="stylesheet"
     />
-     <link rel="shortcut icon" type="image/png" href="/Frontend/assets/img/favicon.png">
+    <link
+      rel="shortcut icon"
+      type="image/png"
+      href="/Frontend/assets/img/favicon.png"
+    />
 
     <title>OriFurniture</title>
   </head>
-  <html>
-    <body>
-      <!-- Header -->
+  <body>
+    <!-- Header -->
 
-      <header>
-        <nav class="bg-navbar bg-dark navbar navbar-expand-lg w-100">
-          <div class="container-fluid">
-            <a
-              class="navbar-brand fs-1 paprika text-light mx-5 py-3 fw-bolder"
-              href="index.html"
-              >OriFurniture</a
-            >
-            <a
-              class="
-                nav-link
-                active
-                btn btn-lg
-                border-bottom
-                rounded-0
-                mx-5
-                col-3
-                fs-5
-                text-white
-                d-flex
-                no-wrap
-                justify-content-center
-                align-item-center
-                text-center
-              "
-              aria-current="page"
-              href="index.html"
-              >Home</a
-            >
-            <a
-              class="
-                nav-link
-                active
-                btn btn-lg
-                border-bottom
-                rounded-0
-                mx-5
-                col-2
-                fs-5
-                text-white
-                d-flex
-                no-wrap
-                justify-content-center
-                align-item-center
-                text-center
-              "
-              aria-current="page"
-              href="index.html"
-              >Infos</a
-            >
+    <header>
+      <nav class="bg-navbar bg-dark navbar navbar-expand-lg w-100">
+        <div class="container-fluid">
+          <a
+            class="navbar-brand fs-1 paprika text-light mx-5 py-3 fw-bolder"
+            href="index.html"
+            >OriFurniture</a
+          >
+          <a
+            class="
+              nav-link
+              active
+              btn btn-lg
+              border-bottom
+              rounded-0
+              mx-5
+              col-3
+              fs-5
+              text-white
+              d-flex
+              no-wrap
+              justify-content-center
+              align-item-center
+              text-center
+            "
+            aria-current="page"
+            href="index.html"
+            >Home</a
+          >
+          <a
+            class="
+              nav-link
+              active
+              btn btn-lg
+              border-bottom
+              rounded-0
+              mx-5
+              col-2
+              fs-5
+              text-white
+              d-flex
+              no-wrap
+              justify-content-center
+              align-item-center
+              text-center
+            "
+            aria-current="page"
+            href="index.html"
+            >Infos</a
+          >
+        </div>
+      </nav>
+    </header>
+
+    <!-- Panier Title -->
+
+    <section class="basket-title">
+      <div
+        class="
+          container-fluid
+          d-flex
+          justify-content-center
+          align-item-center
+          py-5
+          text-light
+        "
+      >
+        <div class="row">
+          <div class="col">
+            <h2 class="display-9 mt-2 paprika border-bottom border-top py-3">
+              Merci pour votre commande !
+            </h2>
           </div>
-        </nav>
-      </header>
+        </div>
+      </div>
+    </section>
 
-      <!-- Panier Title -->
+    <!-- Section Order -->
 
-      <section class="basket-title">
-        <div
-          class="
-            container-fluid
-            d-flex
-            justify-content-center
-            align-item-center
-            py-5
-            text-light
-          "
-        >
+    <section id="section" class="order d-flex justify-content-center roboto">
+      <div class="card text-center bg-dark text-light w-50 p-5">
+        <div class="card-body">
+          <h5 class="card-title mb-5 fs-3 paprika">Confirmation de commande</h5>
+          <p id="name" class="card-text fs-5">
+            <span class="fw-bold"></span> , merci pour votre commande sur notre
+            site !
+          </p>
+          <p id="orderId" class="card-text fs-5">
+            Votre numéro de commande est le : <span class="fw-bold"></span>
+          </p>
+          <p id="total" class="card-text fs-5">
+            Le montant de votre commande s'élève à
+            <span class="fw-bold"></span>€
+          </p>
+          <p id="email" class="card-text fs-5 mb-5">
+            Vous recevrez prochainement un récapitulatif de votre commande sur
+            votre mail <span class="fw-bold"></span>
+          </p>
+          <a
+            href="index.html"
+            class="btn btn-dark btn-lg border border-warning border-2 mt-3"
+            >Retour à l'acceuil</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- Banner-bottom -->
+
+    <section class="basket-title_bottom">
+      <div
+        class="
+          container-fluid
+          d-flex
+          justify-content-center
+          align-item-center
+          py-5
+          text-light
+        "
+      ></div>
+    </section>
+
+    <!-- Footer -->
+
+    <footer>
+      <section class="footer">
+        <div class="container py-4 text-light w-100">
           <div class="row">
-            <div class="col">
-              <h2 class="display-9 mt-2 paprika border-bottom border-top py-3">
-                Merci pour votre commande !
-              </h2>
+            <div
+              class="
+                col
+                text-center∏
+                d-flex
+                align-item-center
+                justify-content-center
+              "
+            >
+              <a href="#" class="btn btn-lg border-bottom rounded-0 text-white"
+                >Contact</a
+              >
+            </div>
+            <div class="col text-center">
+              <a href="#" class="btn btn-lg border-bottom rounded-0 text-white"
+                >Mentions légales</a
+              >
             </div>
           </div>
         </div>
       </section>
+    </footer>
 
-      <!-- Section Order -->
+    <!-- Script JS -->
 
-
-      <section id="section" class="order d-flex justify-content-center roboto">
-        <div class="card text-center bg-dark text-light w-50 p-5">
-          <div class="card-body">
-            <h5 class="card-title mb-5 fs-3 paprika">Confirmation de commande</h5>
-            <p id="name" class="card-text fs-5"><span class="fw-bold"></span> , merci pour votre commande sur notre site !</p>
-            <p id="orderId" class="card-text fs-5">Votre numéro de commande est le : <span class="fw-bold"></span></p>
-            <p id="total" class="card-text fs-5">Le montant de votre commande s'élève à <span class="fw-bold"></span>€</p>
-            <p id="email" class="card-text fs-5 mb-5">Vous recevrez prochainement un récapitulatif de votre commande sur votre mail <span class="fw-bold"></span> </p>
-            <a href="index.html" class="btn btn-dark btn-lg border border-warning border-2 mt-3">Retour à l'acceuil</a>
-          </div>
-        </div>
-      </section>
-
-
-
-
-      <!-- Banner-bottom -->
-
-      <section class="basket-title_bottom">
-        <div
-          class="
-            container-fluid
-            d-flex
-            justify-content-center
-            align-item-center
-            py-5
-            text-light
-          "
-        ></div>
-      </section>
-
-      <!-- Footer -->
-
-      <footer>
-        <section class="footer">
-          <div class="container py-4 text-light w-100">
-            <div class="row">
-              <div class="col text-center d-flex align-item-center justify-content-center">
-                <a
-                  href="#"
-                  class="btn btn-lg border-bottom rounded-0 text-white"
-                  >Contact</a
-                >
-              </div>
-              <div class="col text-center">
-                <a
-                  href="#"
-                  class="btn btn-lg border-bottom rounded-0 text-white"
-                  >Mentions légales</a
-                >
-              </div>
-            </div>
-          </div>
-        </section>
-      </footer>
-
-       <!-- Script JS -->
-
-       
-      <script src="/Frontend/assets/scripts/fonction.js"></script>
-      <script src="/Frontend/assets/scripts/confirmation.js"></script>
-    </body>
-  </html>
+    <script src="/Frontend/assets/scripts/fonction.js"></script>
+    <script src="/Frontend/assets/scripts/confirmation.js"></script>
+  </body>
 </html>
