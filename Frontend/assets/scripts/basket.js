@@ -61,6 +61,9 @@ const regexCity = /^(([a-zA-ZÀ-ÿ]+[\s\-]{1}[a-zA-ZÀ-ÿ]+)|([a-zA-ZÀ-ÿ]+)){1
 const regexMail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]{2,}\.[a-z]{2,4}$/;
 const regexAddress = /^(([a-zA-ZÀ-ÿ0-9]+[\s\-]{1}[a-zA-ZÀ-ÿ0-9]+)){1,10}$/;
 
+console.log(inputfirstName);
+console.log(inputlastName);
+
 submit.addEventListener('click', function (e) {
 
   // Gestion des messages d'erreur pour chaques champs non complétés
@@ -71,25 +74,25 @@ submit.addEventListener('click', function (e) {
     setTimeout(function clearError() {
       prenom.classList.add('invalid-feedback');
     }, 2000);
-  } else if (regexName.test(inputfirstName.value) !== true) {
+  } if (regexName.test(inputlastName.value) !== true) {
     nom.classList.remove('invalid-feedback');
     e.preventDefault();
     setTimeout(function clearError() {
       nom.classList.add('invalid-feedback');
     }, 2000);
-  } else if (regexMail.test(inputEmail.value) !== true) {
+  } if (regexMail.test(inputEmail.value) !== true) {
     email.classList.remove('invalid-feedback');
     e.preventDefault();
     setTimeout(function clearError() {
       email.classList.add('invalid-feedback');
     }, 2000);
-  } else if (regexAddress.test(inputAddress.value) !== true) {
+  } if (regexAddress.test(inputAddress.value) !== true) {
     adresse.classList.remove('invalid-feedback');
     e.preventDefault();
     setTimeout(function clearError() {
       adresse.classList.add('invalid-feedback');
     }, 2000);
-  } else if (regexCity.test(inputCity.value) !== true) {
+  } if (regexCity.test(inputCity.value) !== true) {
     ville.classList.remove('invalid-feedback');
     e.preventDefault();
     setTimeout(function clearError() {
