@@ -68,16 +68,16 @@ addBtn.addEventListener('click', function () {
     let isAlreadyPresent = false;
     let indexModification;
 
+    console.log(productAdded._id);
+
     for (items of userBasket) {
-
-        switch (items.varnish) {
-
-          case productAdded.varnish:
+      
+        if (items.varnish == productAdded.varnish && items.id == productAdded._id) {
 
           isAlreadyPresent = true;
           indexModification = userBasket.indexOf(items);
 
-        }
+       }
     }
 
     // Si déja présent incrémente la quantité
@@ -136,3 +136,12 @@ addBtn.addEventListener('click', function () {
 if (localStorage.getItem('userBasket') !== null) {
   totalBasket();
 }
+
+
+    // for (items of userBasket) {
+    //   switch (items.varnish) {
+    //     case productAdded.varnish:
+    //       isAlreadyPresent = true;
+    //       indexModification = userBasket.indexOf(items);
+    //   }
+    // }
